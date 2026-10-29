@@ -17,7 +17,7 @@ sample = pl.read_csv(
 )
 
 """
-Number of people who failed attention checks
+Get number of people who failed attention checks
 """
 
 # Correct answers for attn checks
@@ -68,9 +68,6 @@ print("FIRST TASK AVERAGE CORRECT:")
 print(sudoku["FT_total_correct"].mean())
 print("FIRST TASK STANDARD DEV:")
 print(f"{sudoku["FT_total_correct"].std():.2f}")
-
-# Need to be able to tell if they got zero because they actually got zero correct or if they got
-# zero because they didn't select that task
 
 easy_hard = sample.select("EASY", "HARD").with_columns(pl.all().cast(pl.Int64, strict=False))
 
